@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">  
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/datetime/1.1.2/css/dataTables.dateTime.min.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body class="w-full min-h-screen flex justify-center p-16 flex-col">
+
+    <div class="filter mb-16">
+        <div class="heading">
+            <h1>Select Filters</h1>
+            <div class="nav">
+                <div class="underline"></div>
+                <div data-nav="1">Date Range</div>
+                <div data-nav="2">Select Month</div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="active" data-con="1">
+                <div class="filterDate flex gap-x-3">
+                    <div>
+                        <p>Minimum date:</p> <input type="text" id="min" name="min" autocomplete="off">
+                    </div>
+                    <div>
+                        <p>Maximum date:</p>
+                        <input type="text" id="max" name="max" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+            <div data-con="2">
+                <div class="filterMonth flex items-end gap-x-4">
+                    <div>
+                        <p>Select Month</p>
+                        <input type="text" id="selectMonth" autocomplete="off">
+                    </div>
+                    <div>
+                        <button type="button" class="clearSelectMonth">Clear Filter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="barChart">
+        
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="tableBg">
+        <table id="ratingTable">
+            <thead>
+                <tr>
+                    <th class="col1">Sl No.</th>
+                    <th class="col2">Job Number</th>
+                    <th class="col3">Rating</th>
+                    <th class="col4">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+<script src="./index.js"></script>
+</html>
